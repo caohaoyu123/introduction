@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>曹浩宇 - 解决方案/产品经理</title>
+    <!-- Tailwind CSS -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Styles -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            color: #1C332A;
+            background-color: #F3FFA3;
+        }
+        
+        /* 主题色调 */
+        :root {
+            --color-primary: #1C332A;  /* 深绿色 */
+            --color-secondary: #2A4C3B;
+            --color-accent: #E1FF7E;   /* 淡黄绿色 */
+            --color-bg-light: #F3FFA3; /* 明亮柠檬黄 */
+            --color-bg-dark: #1C332A;  /* 深绿色背景 */
+            --color-text: #1C332A;
+            --color-text-light: #2A4C3B;
+        }
+        
+        /* 标题样式 */
+        .section-title {
+            position: relative;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 2.5rem;
+        }
+        
+        /* 卡片样式 */
+        .card {
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* 按钮样式 */
+        .btn {
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--color-secondary);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            background-color: transparent;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--color-primary);
+            color: white;
+        }
+        
+        /* 图标容器 */
+        .icon-box {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* 分隔线 */
+        .divider {
+            height: 4px;
+            width: 60px;
+            background-color: var(--color-primary);
+            margin: 0 auto 2.5rem auto;
+            border-radius: 2px;
+        }
+        
+        /* 背景区域 */
+        .bg-accent {
+            background-color: var(--color-accent);
+        }
+        
+        .bg-light {
+            background-color: var(--color-bg-light);
+        }
+        
+        .bg-dark {
+            background-color: var(--color-bg-dark);
+            color: white;
+        }
+        
+        /* 圆角图片 */
+        .img-rounded {
+            border-radius: 20px;
+        }
+        
+        /* 自定义文本颜色 */
+        .text-primary {
+            color: var(--color-primary);
+        }
+        
+        .text-secondary {
+            color: var(--color-secondary);
+        }
+    </style>
+</head>
+<body class="bg-light min-h-screen">
+    <!-- 头部区域 -->
+    <header class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center max-w-6xl mx-auto">
+                <div class="md:w-1/2 md:pr-12 mb-10 md:mb-0 text-center md:text-left">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-2 text-primary">曹浩宇</h1>
+                    <h2 class="text-2xl md:text-3xl mb-2 text-secondary">解决方案 & 产品经理</h2>
+                    <p class="text-lg text-primary opacity-80 mb-6">27岁</p>
+                    <p class="text-secondary mb-10 text-lg">专注于产品策略和用户体验，致力于通过数据驱动和创新解决方案提升产品价值。</p>
+                    <!-- 后面是按钮部分 -->
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                        <a href="#about" class="btn btn-primary w-32">关于我</a>
+                        <a href="#portfolio" class="btn btn-outline w-32">作品</a>
+                        <a href="#contact" class="btn btn-outline w-32">联系我</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-24 h-24 bg-white rounded-full opacity-30"></div>
+                        <img src="./images/touxiang.jpg" alt="曹浩宇" class="w-80 h-80 object-cover rounded-3xl mx-auto relative z-10 shadow-lg">
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-accent rounded-full opacity-50"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 关于我 -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl section-title">关于我</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="card p-8 hover:shadow-xl transition-shadow">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div>
+                            <div class="border-l-4 border-primary pl-4 h-full flex flex-col justify-between">
+                                <div>
+                                    <p class="text-lg text-secondary leading-relaxed mb-6">
+                                        4年教育科技领域深耕经验，专注于SaaS产品从0到1的构建与解决方案落地
+                                    </p>
+                                    <p class="text-lg text-secondary leading-relaxed mb-6">
+                                        主导省级平台项目中标及从0到1全流程实施，从需求洞察到方案落地的全链路把控。
+                                    </p>
+                                    <p class="text-lg text-secondary leading-relaxed">
+                                        熟悉CRM、协同办公等系统架构，持续跟踪大模型技术发展，并推动AI技术在教育场景中的应用升级。
+                                    </p>
+                                </div>
+                                <div class="mt-6 border-t-2 border-accent pt-4 opacity-75">
+                                    <p class="text-secondary italic">致力于打造高效实用的行业解决方案</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="grid grid-cols-2 gap-8">
+                                <div class="bg-light p-5 rounded-2xl transform hover:scale-105 transition-transform">
+                                    <div class="icon-box mx-auto md:mx-0 mb-4">
+                                        <i class="fas fa-laptop-code text-2xl"></i>
+                                    </div>
+                                    <h3 class="text-lg font-bold mb-2">SaaS产品构建</h3>
+                                    <p class="text-secondary">从0到1构建教育信息产品</p>
+                                </div>
+                                <div class="bg-light p-5 rounded-2xl transform hover:scale-105 transition-transform">
+                                    <div class="icon-box mx-auto md:mx-0 mb-4">
+                                        <i class="fas fa-users text-2xl"></i>
+                                    </div>
+                                    <h3 class="text-lg font-bold mb-2">用户体验</h3>
+                                    <p class="text-secondary">持续针对业务场景的用户体验优化</p>
+                                </div>
+                                <div class="bg-light p-5 rounded-2xl transform hover:scale-105 transition-transform">
+                                    <div class="icon-box mx-auto md:mx-0 mb-4">
+                                        <i class="fas fa-chart-line text-2xl"></i>
+                                    </div>
+                                    <h3 class="text-lg font-bold mb-2">解决方案落地</h3>
+                                    <p class="text-secondary">全流程项目推进与方案落地</p>
+                                </div>
+                                <div class="bg-light p-5 rounded-2xl transform hover:scale-105 transition-transform">
+                                    <div class="icon-box mx-auto md:mx-0 mb-4">
+                                        <i class="fas fa-robot text-2xl"></i>
+                                    </div>
+                                    <h3 class="text-lg font-bold mb-2">AI技术应用</h3>
+                                    <p class="text-secondary">大模型技术在业务中的创新应用</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品展示 -->
+    <section id="portfolio" class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl section-title">作品展示</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- 项目 1 -->
+                <div class="card">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./images/crm.jpg" alt="CRM系统竞品分析" class="w-full h-full object-cover">                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">CRM系统竞品分析</h3>
+                        <p class="text-secondary mb-4">深入分析市场上主要CRM系统的优缺点，为产品策略提供依据。</p>
+                        <a href="https://sani3imgzm.feishu.cn/docx/TuExdejhqoseJFxMP6ncIFIInud?from=from_copylink" target="_blank" class="inline-flex items-center text-primary font-medium hover:text-secondary">
+                            查看详情 <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 项目 2 -->
+                <div class="card">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./images/aiagent.jpg" alt="AI agent平台竞品分析" class="w-full h-full object-cover">                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">AI agent平台竞品分析</h3>
+                        <p class="text-secondary mb-4">对比市场上主要AI agent平台，分析其特点和发展趋势。</p>
+                        <a href="https://sani3imgzm.feishu.cn/docx/QWmydIypyoNUe8xjUX9cfSJ5nr4?from=from_copylink" target="_blank" class="inline-flex items-center text-primary font-medium hover:text-secondary">
+                            查看详情 <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 项目 3 -->
+                <div class="card">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./images/ai.jpg" alt="个人大脑agent" class="w-full h-full object-cover">                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">个人大脑agent</h3>
+                        <p class="text-secondary mb-4">基于coze和多维表格开发的个人知识管理智能助手。</p>
+                        <a href="https://www.coze.cn/store/agent/7506452698615988239?bot_id=true" target="_blank" class="inline-flex items-center text-primary font-medium hover:text-secondary">
+                            查看详情 <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我 -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl section-title">联系我</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="card p-8 hover:shadow-xl transition-shadow">
+                    <div class="flex flex-col md:flex-row items-center justify-center">
+                        <div class="text-center mb-10 md:mb-0 md:mr-16">
+                            <div class="w-20 h-20 rounded-full bg-light mx-auto flex items-center justify-center mb-6">
+                                <i class="fab fa-weixin text-4xl text-primary"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">微信联系</h3>
+                            <p class="text-lg text-secondary mb-2">575979867</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-light p-4 rounded-2xl inline-block mb-4">
+                                <!-- 微信二维码图片 -->
+                                <img src="./images/weixin.jpg" alt="微信二维码" class="w-40 h-40 rounded-lg">
+                            </div>
+                            <p class="text-secondary">扫描二维码添加微信</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark py-10">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-white opacity-80 mb-6">&copy; 2025 曹浩宇. 保留所有权利。</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-light bg-opacity-10 border border-light border-opacity-20 flex items-center justify-center text-white hover:bg-accent hover:text-primary transition">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-light bg-opacity-10 border border-light border-opacity-20 flex items-center justify-center text-white hover:bg-accent hover:text-primary transition">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-light bg-opacity-10 border border-light border-opacity-20 flex items-center justify-center text-white hover:bg-accent hover:text-primary transition">
+                    <i class="fab fa-weixin"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 简单的滚动平滑效果
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
